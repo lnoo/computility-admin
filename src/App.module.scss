@@ -1,0 +1,81 @@
+$headingHeight: 6vw;
+$titleHeight: 35px;
+
+.container {
+    background-color: #000b29;
+    height: 100vh;
+    overflow: hidden;
+
+    .main {
+        display: flex;
+        width: 100%;
+        $mt: 20px;
+        margin-top: $mt;
+        height: calc(100vh - $headingHeight - $mt);
+
+        .left {
+            width: 75%;
+
+            .top {
+                height: 70%;
+                display: flex;
+
+                .topLeft {
+                    width: 26%;
+
+                    .env {
+                        height: calc(42% - $titleHeight);
+                    }
+
+                    .powerUsage {
+                        height: calc(26% - $titleHeight);
+                    }
+
+                    .userSource {
+                        height: calc(32% - $titleHeight);
+                    }
+                }
+
+                .topCenter {
+                    width: 48%;
+                }
+
+                .topRight {
+                    width: 26%;
+                    $mt: 20px;
+                    margin-top: $mt;
+                    height: calc(100% - $mt);
+                    .network {
+                        height: calc(25% - $titleHeight);
+                    }
+                    .rdma {
+                        height: calc(35% - $titleHeight);
+                    }
+                    .stream {
+                        height: calc(40% - $titleHeight);
+                    }
+                }
+            }
+
+            .bottom {
+                height: 30%;
+
+                .cluster {
+                    height: calc(100% - $titleHeight);
+                }
+            }
+        }
+
+        .right {
+            width: 25%;
+
+            .warning {
+                height: calc(56% - $titleHeight);
+            }
+
+            .workOrder {
+                height: calc(44% - $titleHeight);
+            }
+        }
+    }
+}
