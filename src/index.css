@@ -7,6 +7,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 暗色系主题的滚动条 */
+::-webkit-scrollbar {
+  width: 12px; /* 滚动条的宽度 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #444; /* 滚动条拇指的颜色（深色） */
+  border-radius: 6px; /* 可选：圆角 */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* 滚动条轨道的背景色（更暗） */
+  border-radius: 6px; /* 可选：圆角 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666; /* 当鼠标悬停时，滚动条拇指变为稍浅的颜色 */
+}
+
+/* Firefox 的暗色系滚动条 */
+html {
+  scrollbar-width: thin; /* 设置滚动条的宽度为细 */
+  scrollbar-color: #444 transparent; /* 滚动条拇指颜色和轨道颜色 */
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

@@ -22,7 +22,7 @@ $titleHeight: 35px;
 
                 .topLeft {
                     width: 26%;
-
+                    overflow: hidden;
                     .env {
                         height: calc(42% - $titleHeight);
                     }

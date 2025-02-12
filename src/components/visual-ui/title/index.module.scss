@@ -1,3 +1,4 @@
+@use "sass:list";
 .main {
     position: relative;
     width: 398px;
@@ -58,24 +59,17 @@
         img {
             transform: perspective(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(-1.2) scaleY(0.8) translate3d(0px, 0px, 0px);
             width: 10px;
-            $delays: (
-                1.5s,
-                1.2s,
-                .9s,
-                .6s,
-                .3s,
-                0
-            );
 
-        @each $d in $delays {
-            $index: index($delays, $d);
+            $delays: 1.5s, 1.2s, .9s, .6s, .3s, 0;
+            @each $d in $delays {
+                $index: list.index($delays, $d);
 
-            &:nth-child(#{$index}) {
-                animation: flash 3s linear infinite $d;
+                &:nth-child(#{$index}) {
+                    animation: flash 3s linear infinite $d;
+                }
             }
         }
     }
-}
 }
 
 @keyframes move {

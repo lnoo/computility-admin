@@ -1,12 +1,12 @@
 import VTitle from './components/visual-ui/title'
 import VHeading from './components/visual-ui/heading'
+import Env from './components/env'
+import PowerUsage from './components/powerUsage'
 import styles from './App.module.scss'
-import Button from '@mui/material/Button';
-
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-const darkTheme = createTheme({
+const theme = createTheme({
   palette: {
     mode: 'dark',
   },
@@ -15,7 +15,7 @@ const darkTheme = createTheme({
 function App() {
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className={styles.container}>
         <VHeading content='公共算力运营平台' />
@@ -24,12 +24,9 @@ function App() {
             <div className={styles.top}>
               <div className={styles.topLeft}>
                 <VTitle content='机房环境监控' />
-                <div className={styles.env}>
-                  <Button variant="contained">Hello world</Button>
-                </div>
+                <Env className={styles.env} />
                 <VTitle content='能耗概览' />
-                <div className={styles.powerUsage}>
-                </div>
+                <PowerUsage className={styles.powerUsage} />
                 <VTitle content='租户资源' />
                 <div className={styles.userSource}>
                 </div>
