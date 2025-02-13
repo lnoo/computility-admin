@@ -1,16 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Button, Paper, buttonClasses } from '@mui/material';
+import { Button, buttonClasses } from '@mui/material';
 import { AutoAwesomeMosaic, AutoAwesomeMotion } from '@mui/icons-material';
 import { BarChart } from '@mui/x-charts';
-import {dataset, valueFormatter} from './dataset'
-
-const chartSetting = {
-    xAxis: [
-        {
-            label: 'rainfall (mm)',
-        },
-    ],
-};
+import { dataset, valueFormatter } from './dataset'
 
 const StyledButton = styled(Button)(({ theme }) => ({
     [`&.${buttonClasses.root}`]: {
@@ -23,20 +15,37 @@ const StyledButton = styled(Button)(({ theme }) => ({
     }
 }))
 
+const StyledBarChart = styled(BarChart)(({ theme }) => ({
+    '.MuiChartsAxis-line, .MuiChartsAxis-tick': {
+         stroke: '#444 !important'
+    }
+}))
+
 export default function Rdma({ className }: { className?: string }) {
     return (
-            <Paper className={className} style={{ paddingBottom: '10px', backgroundColor: 'transparent' }}>
-                <div style={{ margin: '10px 0', display: 'flex', alignItems: 'end', justifyContent: 'space-around' }}>
-                        <StyledButton sx={{ mr: 5 }} className='active' startIcon={<AutoAwesomeMosaic />} size="small">参数面</StyledButton>
-                        <StyledButton startIcon={<AutoAwesomeMotion />} size="small">样本面</StyledButton>
-                </div>
-                <BarChart
+        <div className={className}>
+            <div style={{ height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+                <StyledButton sx={{ mr: 5 }} className='active' startIcon={<AutoAwesomeMosaic />} size="small">参数面</StyledButton>
+                <StyledButton startIcon={<AutoAwesomeMotion />} size="small">样本面</StyledButton>
+            </div>
+            <div style={{ height: 'calc(100% - 50px)' }}>
+                <StyledBarChart
+                    margin={{ left: 100, right: 30, top: 10, bottom: 20 }}
                     dataset={dataset}
-                    yAxis={[{ scaleType: 'band', dataKey: 'month' }]}
-                    series={[{ dataKey: 'seoul',  valueFormatter }]}
+                    bottomAxis={null}
+                    yAxis={[{
+                        scaleType: 'band',
+                        dataKey: 'month',
+                        // eslint-disable-next-line
+                        // @ts-expect-error
+                        categoryGapRatio: .5,
+                        tickLabelStyle: {width: '1px'}
+                    }]}
+                    series={[{ dataKey: 'seoul', valueFormatter, color: '#082f79' }]}
                     layout="horizontal"
-                    {...chartSetting}
+                    barLabel={(item) =>  item.value + '%'}
                 />
-            </Paper>
+            </div>
+        </div>
     );
 }
