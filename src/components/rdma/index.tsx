@@ -3,6 +3,7 @@ import { Button, buttonClasses } from '@mui/material';
 import { AutoAwesomeMosaic, AutoAwesomeMotion } from '@mui/icons-material';
 import { BarChart } from '@mui/x-charts';
 import { dataset, valueFormatter } from './dataset'
+import { grey } from '@mui/material/colors';
 
 const StyledButton = styled(Button)(({ theme }) => ({
     [`&.${buttonClasses.root}`]: {
@@ -15,9 +16,9 @@ const StyledButton = styled(Button)(({ theme }) => ({
     }
 }))
 
-const StyledBarChart = styled(BarChart)(({ theme }) => ({
+const StyledBarChart = styled(BarChart)(() => ({
     '.MuiChartsAxis-line, .MuiChartsAxis-tick': {
-         stroke: '#444 !important'
+         stroke: `${grey[800]} !important`
     }
 }))
 
