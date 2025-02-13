@@ -1,6 +1,7 @@
 import VTitle from './components/visual-ui/title'
 import VHeading from './components/visual-ui/heading'
 import Env from './components/env'
+import Rdma from './components/rdma'
 import PowerUsage from './components/powerUsage'
 import UserSource from './components/userSource'
 import NetworkStatus from './components/networkStatus'
@@ -38,8 +39,7 @@ function App() {
                 <VTitle content='集群网络状态' size={.9} />
                 <NetworkStatus className={styles.network} />
                 <VTitle content='RDMA网络流量 TOP5' size={.9} />
-                <div className={styles.rdma}>
-                </div>
+                <Rdma className={styles.rdma} />
                 <VTitle content='互联网与专线网络流量' size={.9} />
                 <div className={styles.stream}>
                 </div>
