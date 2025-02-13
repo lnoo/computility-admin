@@ -54,16 +54,16 @@ const rows = new Array(20).fill('').map((_, i) => {
 export default function Env({ className }: { className?: string }) {
     return (
         <>
-            <div style={{ margin: '10px 0', display: 'flex', alignItems: 'end', justifyContent: 'space-around' }}>
-                <div>
-                    <StyledButton sx={{ mr: 5 }} className='active' startIcon={<WindPowerOutlined />} size="small">风冷</StyledButton>
-                    <StyledButton startIcon={<WaterDropOutlined />} size="small">液冷</StyledButton>
-                </div>
-                <Badge badgeContent={4} color="warning">
-                    <WarningAmber color="action" />
-                </Badge>
-            </div>
             <TableContainer component={Paper} className={className} style={{ paddingBottom: '10px', backgroundColor: 'transparent' }}>
+                <div style={{ margin: '10px 0', display: 'flex', alignItems: 'end', justifyContent: 'space-around' }}>
+                    <div>
+                        <StyledButton sx={{ mr: 5 }} className='active' startIcon={<WindPowerOutlined />} size="small">风冷</StyledButton>
+                        <StyledButton startIcon={<WaterDropOutlined />} size="small">液冷</StyledButton>
+                    </div>
+                    <Badge badgeContent={4} color="warning">
+                        <WarningAmber color="action" />
+                    </Badge>
+                </div>
                 <Table stickyHeader size='small' style={{ minWidth: '350px' }}>
                     <TableHead>
                         <TableRow>

@@ -23,6 +23,7 @@ $titleHeight: 35px;
                 .topLeft {
                     width: 26%;
                     overflow: hidden;
+
                     .env {
                         height: calc(42% - $titleHeight);
                     }
@@ -45,12 +46,15 @@ $titleHeight: 35px;
                     $mt: 20px;
                     margin-top: $mt;
                     height: calc(100% - $mt);
+
                     .network {
                         height: calc(25% - $titleHeight);
                     }
+
                     .rdma {
                         height: calc(35% - $titleHeight);
                     }
+
                     .stream {
                         height: calc(40% - $titleHeight);
                     }

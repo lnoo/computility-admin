@@ -2,6 +2,8 @@ import VTitle from './components/visual-ui/title'
 import VHeading from './components/visual-ui/heading'
 import Env from './components/env'
 import PowerUsage from './components/powerUsage'
+import UserSource from './components/userSource'
+import NetworkStatus from './components/networkStatus'
 import styles from './App.module.scss'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -28,15 +30,13 @@ function App() {
                 <VTitle content='能耗概览' />
                 <PowerUsage className={styles.powerUsage} />
                 <VTitle content='租户资源' />
-                <div className={styles.userSource}>
-                </div>
+                <UserSource className={styles.userSource} />
               </div>
               <div className={styles.topCenter}>
               </div>
               <div className={styles.topRight}>
                 <VTitle content='集群网络状态' />
-                <div className={styles.network}>
-                </div>
+                <NetworkStatus className={styles.network} />
                 <VTitle content='RDMA网络流量 TOP5' />
                 <div className={styles.rdma}>
                 </div>
