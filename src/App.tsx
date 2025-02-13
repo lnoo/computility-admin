@@ -35,12 +35,12 @@ function App() {
               <div className={styles.topCenter}>
               </div>
               <div className={styles.topRight}>
-                <VTitle content='集群网络状态' />
+                <VTitle content='集群网络状态' size={.9} />
                 <NetworkStatus className={styles.network} />
-                <VTitle content='RDMA网络流量 TOP5' />
+                <VTitle content='RDMA网络流量 TOP5' size={.9} />
                 <div className={styles.rdma}>
                 </div>
-                <VTitle content='互联网与专线网络流量' />
+                <VTitle content='互联网与专线网络流量' size={.9} />
                 <div className={styles.stream}>
                 </div>
               </div>

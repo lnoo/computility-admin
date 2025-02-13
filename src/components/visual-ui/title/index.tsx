@@ -7,10 +7,13 @@ import ImgFlashItem from './flash-item.svg'
 import ImgMove from './move.svg'
 
 import { FC } from 'react'
-
-const VTitle: FC<{ content: string }> = ({ content }) => {
+interface Props {
+  content: string,
+  size?: number
+}
+const VTitle: FC<Props> = ({ content, size = 1 }) => {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} style={{transform: `scale(${size})`, transformOrigin: 'left'}}>
       <div className={styles.content}>
         {content}
       </div>

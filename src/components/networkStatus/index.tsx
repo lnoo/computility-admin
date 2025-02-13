@@ -4,8 +4,10 @@ import circle1 from './circle1.png'
 import circle2 from './circle2.png'
 import circle3 from './circle3.png'
 import circle4 from './circle4.png'
+import { useTheme } from '@mui/material'
 
 export default function Env({ className }: { className?: string }) {
+    const theme  =useTheme()
 
     return <div className={`${className} ${styles.wrapper}`}>
 
@@ -17,12 +19,8 @@ export default function Env({ className }: { className?: string }) {
             <img src={circle4} />
         </div>
         <div className={styles.data}>
-            <div className={styles.congestion}>
-                拥塞节点数123
-            </div>
-            <div className={styles.flapping}>
-                链路抖动数123
-            </div>
+            <div style={{ color: theme.palette.error.dark }}>拥塞节点：0</div>
+            <div style={{ color: theme.palette.warning.dark }}>链路抖动：2</div>
         </div>
     </div>
 }
