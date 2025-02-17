@@ -2,6 +2,7 @@ import VTitle from './components/visual-ui/title'
 import VHeading from './components/visual-ui/heading'
 import Env from './components/env'
 import Rdma from './components/rdma'
+import Stream from './components/stream'
 import PowerUsage from './components/powerUsage'
 import UserSource from './components/userSource'
 import NetworkStatus from './components/networkStatus'
@@ -16,7 +17,6 @@ const theme = createTheme({
 });
 
 function App() {
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -41,8 +41,7 @@ function App() {
                 <VTitle content='RDMA网络流量 TOP5' size={.9} />
                 <Rdma className={styles.rdma} />
                 <VTitle content='互联网与专线网络流量' size={.9} />
-                <div className={styles.stream}>
-                </div>
+                <Stream className={styles.stream} />
               </div>
             </div>
             <div className={styles.bottom}>

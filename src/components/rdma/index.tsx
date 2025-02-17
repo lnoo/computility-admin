@@ -18,7 +18,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const StyledBarChart = styled(BarChart)(() => ({
     '.MuiChartsAxis-line, .MuiChartsAxis-tick': {
-         stroke: `${grey[800]} !important`
+        stroke: `${grey[800]} !important`
     }
 }))
 
@@ -31,7 +31,7 @@ export default function Rdma({ className }: { className?: string }) {
             </div>
             <div style={{ height: 'calc(100% - 50px)' }}>
                 <StyledBarChart
-                    margin={{ left: 100, right: 30, top: 10, bottom: 20 }}
+                    margin={{ left: 100, right: 50, top: 10, bottom: 20 }}
                     dataset={dataset}
                     bottomAxis={null}
                     yAxis={[{
@@ -40,11 +40,11 @@ export default function Rdma({ className }: { className?: string }) {
                         // eslint-disable-next-line
                         // @ts-expect-error
                         categoryGapRatio: .5,
-                        tickLabelStyle: {width: '1px'}
+                        tickLabelStyle: { width: '1px' }
                     }]}
                     series={[{ dataKey: 'seoul', valueFormatter, color: '#082f79' }]}
                     layout="horizontal"
-                    barLabel={(item) =>  item.value + '%'}
+                    barLabel={(item) => item.value + '%'}
                 />
             </div>
         </div>
