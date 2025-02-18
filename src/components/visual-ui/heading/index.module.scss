@@ -7,13 +7,14 @@
 
     .content {
         position: absolute;
+        z-index: 1;
         left: 50%;
-        top: 5%;
+        top: 40%;
         font-size: 50px;
         color: rgb(255, 255, 255);
         letter-spacing: 2px;
         font-weight: normal;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         filter: drop-shadow(rgb(0, 125, 202) 0px 0px 6px);
     }
 
