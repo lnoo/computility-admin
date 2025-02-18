@@ -5,6 +5,7 @@ import Rdma from './components/rdma'
 import Stream from './components/stream'
 import PowerUsage from './components/powerUsage'
 import UserSource from './components/userSource'
+import PFlops from './components/pFlops'
 import NetworkStatus from './components/networkStatus'
 import styles from './App.module.scss'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -33,8 +34,7 @@ function App() {
                 <VTitle content='租户资源' />
                 <UserSource className={styles.userSource} />
               </div>
-              <div className={styles.topCenter}>
-              </div>
+              <PFlops className={styles.topCenter} />
               <div className={styles.topRight}>
                 <VTitle content='集群网络状态' size={.9} />
                 <NetworkStatus className={styles.network} />
