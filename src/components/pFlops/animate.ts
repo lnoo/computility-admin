@@ -7,10 +7,10 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(200, 200);
 renderer.setClearColor('#000b29')
 
-const textureLoader = new THREE.TextureLoader();
-const backgroundTexture = textureLoader.load('./bg.png');
-// 设置场景背景图
-scene.background = backgroundTexture;
+// const textureLoader = new THREE.TextureLoader();
+// const backgroundTexture = textureLoader.load('./bg.png');
+// // 设置场景背景图
+// scene.background = backgroundTexture;
 
 // 创建点阵 geometry 和 material
 const geometry = new THREE.BufferGeometry();
