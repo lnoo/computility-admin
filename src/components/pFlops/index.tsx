@@ -1,9 +1,22 @@
 import styles from './index.module.scss'
 import animateRenderer from './animate'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import NumberFlow, { continuous } from '@number-flow/react'
+import NumCircle from './circle'
 
 export default function Env({ className }: { className?: string }) {
     const animateRef = useRef<HTMLDivElement>(null)
+    const [flopsNum, setNum] = useState(7800)
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setNum(Math.random() * 800 + 7000)
+        }, 3e3);
+        return () => {
+            clearInterval(timer)
+        }
+    }, [])
+
     useEffect(() => {
         if (!animateRef.current) return
 
@@ -18,9 +31,10 @@ export default function Env({ className }: { className?: string }) {
         <div className={className}>
             <div className={styles.pFlopsNum} ref={animateRef} style={{ opacity: 0 }}>
                 <strong>
-                    7800
+                    <NumberFlow value={flopsNum} format={{ notation: "compact", maximumFractionDigits: 0 }} plugins={[continuous]} />
                 </strong>
             </div>
+            <NumCircle numItems={8} />
         </div>
     );
 }
