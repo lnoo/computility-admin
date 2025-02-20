@@ -7,6 +7,7 @@ import PowerUsage from './components/powerUsage'
 import UserSource from './components/userSource'
 import PFlops from './components/pFlops'
 import NetworkStatus from './components/networkStatus'
+import Cluster from './components/cluster'
 import styles from './App.module.scss'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -46,9 +47,7 @@ function App() {
             </div>
             <div className={styles.bottom}>
               <VTitle content='集群监控' />
-              <div className={styles.cluster}>
-
-              </div>
+              <Cluster className={styles.cluster} />
             </div>
 
           </div>

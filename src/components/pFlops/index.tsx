@@ -3,6 +3,9 @@ import animateRenderer from './animate'
 import { useEffect, useRef, useState } from 'react';
 import NumberFlow, { continuous } from '@number-flow/react'
 import NumCircle from './circle'
+import NumBg from './num.png'
+import { Brightness1 } from '@mui/icons-material';
+import { Button, Tooltip } from '@mui/material';
 
 export default function Env({ className }: { className?: string }) {
     const animateRef = useRef<HTMLDivElement>(null)
@@ -35,6 +38,31 @@ export default function Env({ className }: { className?: string }) {
                 </strong>
             </div>
             <NumCircle numItems={8} />
+            <div className={styles.desc}>
+                {
+                    [
+                        { label: '集群数', value: 10, online: '100%' },
+                        { label: '节点数', value: 20, online: '100%' },
+                        { label: '交换机数', value: 110, online: '100%' },
+                    ].map(item => {
+                        return <div>
+                            <img src={NumBg} />
+                            <div>
+                                <div>
+
+                                    <strong style={{ fontSize: '30px' }}>{item.value}</strong>
+                                    <Tooltip title="在线率" placement='top'>
+                                        <Button sx={{ fontSize: '12px' }}>
+                                            <Brightness1 color='success' sx={{ fontSize: '10px' }} /> {item.online}
+                                        </Button>
+                                    </Tooltip>
+                                </div>
+                                {item.label}
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
         </div>
     );
 }

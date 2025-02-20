@@ -11,3 +11,27 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.desc {
+    color: #90caf9;
+    height: 10%;
+    width: 100%;
+    display: flex;
+
+    &>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 20%;
+            height: auto;
+        }
+
+        &>div {
+            margin-left: .4vw;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
