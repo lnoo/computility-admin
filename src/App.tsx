@@ -8,6 +8,8 @@ import UserSource from './components/userSource'
 import PFlops from './components/pFlops'
 import NetworkStatus from './components/networkStatus'
 import Cluster from './components/cluster'
+import Warning from './components/warning'
+import WorkOrder from './components/workOrder'
 import styles from './App.module.scss'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -53,13 +55,9 @@ function App() {
           </div>
           <div className={styles.right}>
             <VTitle content='当前警告' />
-            <div className={styles.warning}>
-
-            </div>
+            <Warning className={styles.warning} />
             <VTitle content='当前工单' />
-            <div className={styles.workOrder}>
-
-            </div>
+            <WorkOrder className={styles.workOrder} />
           </div>
         </div>
       </div>
