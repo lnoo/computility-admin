@@ -4,7 +4,7 @@
 }
 :root {
   color-scheme: light dark;
-
+  font-size: .7vw;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

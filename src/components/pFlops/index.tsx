@@ -35,9 +35,10 @@ export default function Env({ className }: { className?: string }) {
             <div className={styles.pFlopsNum} ref={animateRef} style={{ opacity: 0 }}>
                 <strong>
                     <NumberFlow value={flopsNum} format={{ notation: "compact", maximumFractionDigits: 0 }} plugins={[continuous]} />
+                    <small>PFlops</small>
                 </strong>
             </div>
-            <NumCircle numItems={8} />
+            <NumCircle className={styles.main} numItems={8} />
             <div className={styles.desc}>
                 {
                     [
@@ -49,8 +50,7 @@ export default function Env({ className }: { className?: string }) {
                             <img src={NumBg} />
                             <div>
                                 <div>
-
-                                    <strong style={{ fontSize: '30px' }}>{item.value}</strong>
+                                    <strong style={{ fontSize: '2.5rem' }}>{item.value}</strong>
                                     <Tooltip title="在线率" placement='top'>
                                         <Button sx={{ fontSize: '12px' }}>
                                             <Brightness1 color='success' sx={{ fontSize: '10px' }} /> {item.online}

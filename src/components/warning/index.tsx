@@ -4,6 +4,7 @@ import styles from './index.module.scss'
 import Pie from './pie'
 import WarningTable from './table'
 import { Typography } from '@mui/material';
+import { Fragment } from 'react/jsx-runtime'
 
 export default function Warning({ className }: { className?: string }) {
     return (
@@ -25,12 +26,12 @@ export default function Warning({ className }: { className?: string }) {
                     { label: '带宽利用率异常报警', value: 1 },
                     { label: '光模块故障报警', value: 1 }
                 ].map(item =>
-                    <>
+                    <Fragment key={item.label}>
                         <img src={AbnormalBg} />
                         <div style={{ color: '#65C1FF' }}>
                             <strong>{item.value}</strong>{item.label}
                         </div>
-                    </>
+                    </Fragment>
                 )}
             </div>
             <div className={styles.pie}>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./circle.module.scss";
 
-const CircleLayout = ({ numItems }: { numItems: number }) => {
-    const radius = 10; // 半径，决定圆的大小
+const CircleLayout = ({ className, numItems }: { className: string; numItems: number }) => {
+    const radius = 12; // 半径，决定圆的大小
+    const ellipticity = .75
     const angleStep = 360 / numItems; // 每个子元素的角度步长
     const [items, setItems] = useState(Array.from({ length: numItems }).map(() => ({ x: 0, y: 0, id: 0 })))
 
@@ -19,15 +20,17 @@ const CircleLayout = ({ numItems }: { numItems: number }) => {
     useEffect(() => {
         setItems(items.map((_, index) => {
             const angle = index * angleStep;
+            // 椭圆形
+            const percent = ((angle > 40 && angle < 140) || (angle > 220 && angle < 320)) ? ellipticity : 1;
             const x = radius * Math.cos((angle * Math.PI) / 180); // 计算X坐标
-            const y = radius * Math.sin((angle * Math.PI) / 180); // 计算Y坐标
+            const y = radius * percent * Math.sin((angle * Math.PI) / 180); // 计算Y坐标
 
             return { x, y, id: Math.floor(Math.random() * 100) };
         }))
     }, [numItems, angleStep])
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`}>
             <div className={styles.element}>
                 {boxItems.map((item, index) => (
                     <div

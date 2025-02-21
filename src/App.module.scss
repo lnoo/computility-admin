@@ -9,6 +9,7 @@ $titleHeight: 35px;
     .main {
         display: flex;
         width: 100%;
+        padding: 1%;
         $mt: 20px;
         margin-top: $mt;
         height: calc(100vh - $headingHeight - $mt);
