@@ -5,6 +5,7 @@ import Pie from './pie'
 import WarningTable from './table'
 import { Typography } from '@mui/material';
 import { Fragment } from 'react/jsx-runtime'
+import TextDigital from '../visual-ui/textDigital'
 
 export default function Warning({ className }: { className?: string }) {
     return (
@@ -17,7 +18,7 @@ export default function Warning({ className }: { className?: string }) {
                     { label: '一般警告', value: 10, color: '#EFE16E' }
                 ].map((item) =>
                     <div key={item.label} style={{ color: item.color }}>
-                        <strong>{item.value}</strong>{item.label}
+                        <TextDigital>{item.value}</TextDigital>{item.label}
                     </div>
                 )}
             </div>
@@ -29,7 +30,7 @@ export default function Warning({ className }: { className?: string }) {
                     <Fragment key={item.label}>
                         <img src={AbnormalBg} />
                         <div style={{ color: '#65C1FF' }}>
-                            <strong>{item.value}</strong>{item.label}
+                            <TextDigital>{item.value}</TextDigital>{item.label}
                         </div>
                     </Fragment>
                 )}

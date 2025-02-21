@@ -1,31 +1,7 @@
 import { styled } from '@mui/material/styles';
-import { Table, TableBody, TableContainer, TableHead, TableRow, Button, Paper, TableCell, tableCellClasses, buttonClasses, Badge } from '@mui/material';
+import { Table, TableBody, TableContainer, TableHead, TableRow, Button, Paper, buttonClasses, Badge, Tooltip } from '@mui/material';
 import { WarningAmber, WaterDropOutlined, WindPowerOutlined } from '@mui/icons-material';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-        backgroundColor: '#082f79',
-        color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-        border: 'none',
-        fontSize: 14,
-        color: theme.palette.common.white,
-    },
-}));
-
-const StyledTableRow = styled(TableRow)(() => ({
-    '&:nth-of-type(even)': {
-        backgroundColor: '#082f79',
-    },
-    '&:nth-of-type(odd)': {
-        backgroundColor: 'transparent',
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-        border: 0,
-    },
-}));
+import { StyledTableCell, StyledTableRow } from '../common'
 
 const StyledButton = styled(Button)(({ theme }) => ({
     [`&.${buttonClasses.root}`]: {
@@ -60,9 +36,11 @@ export default function Env({ className }: { className?: string }) {
                         <StyledButton sx={{ mr: 5 }} className='active' startIcon={<WindPowerOutlined />} size="small">风冷</StyledButton>
                         <StyledButton startIcon={<WaterDropOutlined />} size="small">液冷</StyledButton>
                     </div>
-                    <Badge badgeContent={4} color="warning">
-                        <WarningAmber color="action" />
-                    </Badge>
+                    <Tooltip title="告警" placement='top'>
+                        <Badge badgeContent={4} color="warning">
+                            <WarningAmber color="action" />
+                        </Badge>
+                    </Tooltip>
                 </div>
                 <Table stickyHeader size='small' style={{ minWidth: '350px' }}>
                     <TableHead>

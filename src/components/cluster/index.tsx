@@ -3,6 +3,7 @@ import { Tabs, Tab, Box, Stack, Typography } from '@mui/material';
 import Pie from './pie'
 import PieStatus from './pieStatus'
 import Line from './line'
+import TextDigital from '../visual-ui/textDigital';
 
 export default function Cluster({ className }: { className: string }) {
     const [value, setValue] = React.useState(0);
@@ -14,7 +15,7 @@ export default function Cluster({ className }: { className: string }) {
     return (
         <div className={className}>
             <Box
-                sx={{ display: 'flex', height: '100%', pb: 5 }}
+                sx={{ display: 'flex', height: '100%' }}
             >
                 <Tabs
                     orientation="vertical"
@@ -28,10 +29,10 @@ export default function Cluster({ className }: { className: string }) {
                     }
                 </Tabs>
                 <Stack direction="row" width="100%" textAlign="center" spacing={3}>
-                    <Box width='20%' display='flex' alignItems='start' justifyContent='center' flexDirection='column' padding='1vw'>
-                        <p>当前警告： 0</p>
-                        <p>当前运行时间：38天</p>
-                        <p>历史最长运行时间：38天</p>
+                    <Box width='20%' display='flex' fontFamily='digital' alignItems='center' justifyContent='center' flexDirection='column' padding='1vw'>
+                        <p><small>当前警告</small> <TextDigital color='#9ac342'>0</TextDigital></p>
+                        <p><small>当前运行时间</small> <TextDigital color='#9ac342'>38</TextDigital> 天</p>
+                        <p><small>历史最长运行时间</small> <TextDigital color='#9ac342'>38</TextDigital> 天</p>
                     </Box>
                     <Box width='20%'>
                         <Typography sx={{ mt: 2 }}>任务类型分布</Typography>

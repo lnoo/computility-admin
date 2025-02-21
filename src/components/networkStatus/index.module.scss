@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     align-items: center;
+
     .circle {
         height: 80%;
         margin-left: 10%;
@@ -36,18 +37,35 @@
         }
 
     }
+
     .data {
         height: 70%;
         display: flex;
         flex-direction: column;
         flex: 1;
-        align-items: end;
-        justify-content: space-around;
         transform: translateX(-20%);
+        font-family: 'digital';
+
+        span,
+        strong {
+            background: #000b29;
+        }
+
+        span {
+            padding-left: .2rem;
+        }
+
+        strong {
+            padding-right: .2rem;
+            font-size: 2rem;
+        }
+
         &>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 50%;
             width: 100%;
-            text-align: center;
             background: url(./line.png) no-repeat left center / 100% auto;
         }
     }

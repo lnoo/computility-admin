@@ -2,6 +2,7 @@
   font-family: 'digital';
   src: url(./assets/DIGITAL.TTF);
 }
+
 :root {
   color-scheme: light dark;
   font-size: .7vw;

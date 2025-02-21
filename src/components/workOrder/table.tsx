@@ -1,31 +1,6 @@
-import { styled } from '@mui/material/styles';
-import { Table, TableBody, TableContainer, TableHead, TableRow, Paper, TableCell, tableCellClasses } from '@mui/material';
+import { Table, TableBody, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import dayjs from 'dayjs';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-        backgroundColor: '#082f79',
-        color: theme.palette.common.white,
-    },
-    [`&.${tableCellClasses.body}`]: {
-        border: 'none',
-        fontSize: 14,
-        color: theme.palette.common.white,
-    },
-}));
-
-const StyledTableRow = styled(TableRow)(() => ({
-    '&:nth-of-type(even)': {
-        backgroundColor: '#082f79',
-    },
-    '&:nth-of-type(odd)': {
-        backgroundColor: 'transparent',
-    },
-    // hide last border
-    '&:last-child td, &:last-child th': {
-        border: 0,
-    },
-}));
+import { StyledTableCell, StyledTableRow } from '../common'
 
 function createData(
     name: string,

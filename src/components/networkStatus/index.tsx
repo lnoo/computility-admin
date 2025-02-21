@@ -7,7 +7,7 @@ import circle4 from './circle4.png'
 import { useTheme } from '@mui/material'
 
 export default function Env({ className }: { className?: string }) {
-    const theme  =useTheme()
+    const theme = useTheme()
 
     return <div className={`${className} ${styles.wrapper}`}>
 
@@ -19,8 +19,8 @@ export default function Env({ className }: { className?: string }) {
             <img src={circle4} />
         </div>
         <div className={styles.data}>
-            <div style={{ color: theme.palette.error.dark }}>拥塞节点：0</div>
-            <div style={{ color: theme.palette.warning.dark }}>链路抖动：2</div>
+            <div style={{ color: theme.palette.error.dark }}><span>拥塞节点&ensp;</span><strong>0</strong></div>
+            <div style={{ color: theme.palette.warning.dark }}><span>链路抖动&ensp;</span><strong>3</strong></div>
         </div>
     </div>
 }
