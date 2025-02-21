@@ -14,7 +14,7 @@ export default function WorkOrder({ className }: { className?: string }) {
                 </div>
                 <div className={styles.animate}>
                     <img className={styles.bottom} src={Bg1} />
-                    {Array.from({ length: 4 }).map((_, i) => <img className={`${styles.top} ${styles[`top-${i}`]}`} src={Bg2} />)}
+                    {Array.from({ length: 4 }).map((_, i) => <img key={i} className={`${styles.top} ${styles[`top-${i}`]}`} src={Bg2} />)}
                     <img className={styles.middle} src={Bg3} />
                 </div>
                 <div>

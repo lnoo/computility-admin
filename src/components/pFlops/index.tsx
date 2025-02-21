@@ -45,7 +45,7 @@ export default function Env({ className }: { className?: string }) {
                         { label: '节点数', value: 20, online: '100%' },
                         { label: '交换机数', value: 110, online: '100%' },
                     ].map(item => {
-                        return <div>
+                        return <div key={item.label}>
                             <img src={NumBg} />
                             <div>
                                 <div>

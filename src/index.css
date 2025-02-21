@@ -1,3 +1,7 @@
+@font-face {
+  font-family: 'digital';
+  src: url(./assets/DIGITAL.TTF);
+}
 :root {
   color-scheme: light dark;
 

@@ -7,7 +7,16 @@ import dayjs from 'dayjs';
 const StyledLineChart = styled(LineChart)(() => ({
     '.MuiChartsAxis-line, .MuiChartsAxis-tick': {
         stroke: `${grey[800]} !important`
-    }
+    },
+    '& .MuiAreaElement-series-France': {
+        fill: "url('#France')",
+    },
+    '& .MuiAreaElement-series-Germany': {
+        fill: "url('#Germany')",
+    },
+    '& .MuiAreaElement-series-UK': {
+        fill: "url('#UK')",
+    },
 }))
 
 export default function Stream({ className }: { className?: string }) {
@@ -32,7 +41,7 @@ export default function Stream({ className }: { className?: string }) {
                         label: 'GWx83',
                         dataKey: 'fr',
                         stack: 'total',
-                        color: '#083079',
+                        color: 'rgba(53, 255, 244, 0.3)',
                         area: true,
                         showMark: false,
                     },
@@ -41,21 +50,36 @@ export default function Stream({ className }: { className?: string }) {
                         label: 'GWx81',
                         dataKey: 'dl',
                         stack: 'total',
-                        color: '#2859b8',
+                        color: 'rgba(8, 139, 255, 0.3)',
                         area: true,
                         showMark: false,
                     },
                     {
-                        id: 'United Kingdom',
+                        id: 'UK',
                         label: 'GWtn1',
                         dataKey: 'gb',
                         stack: 'total',
-                        color: '#53c4d8',
+                        color: 'rgba(236, 168, 80, 0.3)',
                         area: true,
                         showMark: false,
                     },
                 ]}
-            />
+            >
+                <defs>
+                    <linearGradient id="France" gradientTransform="rotate(90)">
+                        <stop offset="0%" stopColor="rgba(53, 255, 244, 0.3)" />
+                        <stop offset="100%" stopColor="rgba(53, 255, 244, 0.0001)" />
+                    </linearGradient>
+                    <linearGradient id="Germany" gradientTransform="rotate(90)">
+                        <stop offset="0%" stopColor="rgba(8, 139, 255, 0.3)" />
+                        <stop offset="100%" stopColor="rgba(8, 139, 255, 0.0001)" />
+                    </linearGradient>
+                    <linearGradient id="UK" gradientTransform="rotate(90)">
+                        <stop offset="0%" stopColor="rgba(236, 168, 80, 0.3)" />
+                        <stop offset="100%" stopColor="rgba(236, 168, 80, 0.0001)" />
+                    </linearGradient>
+                </defs>
+            </StyledLineChart>
         </div>
     );
 }
