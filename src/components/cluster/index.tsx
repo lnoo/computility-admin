@@ -29,7 +29,7 @@ export default function Cluster({ className }: { className: string }) {
                     }
                 </Tabs>
                 <Stack direction="row" width="100%" textAlign="center" spacing={3}>
-                    <Box width='20%' display='flex' fontFamily='digital' alignItems='center' justifyContent='center' flexDirection='column' padding='1vw'>
+                    <Box width='20%' display='flex' fontFamily='digital' alignItems='center' justifyContent='center' flexDirection='column' padding='1vw' lineHeight='1'>
                         <p><small>当前警告</small> <TextDigital color='#9ac342'>0</TextDigital></p>
                         <p><small>当前运行时间</small> <TextDigital color='#9ac342'>38</TextDigital> 天</p>
                         <p><small>历史最长运行时间</small> <TextDigital color='#9ac342'>38</TextDigital> 天</p>

@@ -8,12 +8,13 @@ import ImgMove from './move.svg'
 
 import { FC } from 'react'
 interface Props {
-  content: string,
-  size?: number
+  content: string;
+  size?: number;
+  style?: CSSStyleDeclaration;
 }
-const VTitle: FC<Props> = ({ content, size = 1 }) => {
+const VTitle: FC<Props> = ({ style = {}, content, size = 1 }) => {
   return (
-    <div className={styles.main} style={{transform: `scale(${size})`, transformOrigin: 'left'}}>
+    <div className={styles.main} style={{ transform: `scale(${size})`, transformOrigin: 'left', ...style }}>
       <div className={styles.content}>
         {content}
       </div>

@@ -55,7 +55,7 @@ const CircleLayout = ({ className, numItems }: { className: string; numItems: nu
                         transform: `translate(${item.x}vw, ${item.y}vw)`,
                     }}
                 >
-                    <strong>99</strong>
+                    <strong>{Math.floor(Math.random() * 10) + 90}</strong>
                     <div className={styles.name}>А5.5.3.{item.id}</div>
                 </div>
             ))}
