@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./circle.module.scss";
+import NumberFlow, { continuous } from "@number-flow/react";
 
 const CircleLayout = ({ className, numItems }: { className: string; numItems: number }) => {
     const radius = 12; // 半径，决定圆的大小
@@ -42,10 +43,10 @@ const CircleLayout = ({ className, numItems }: { className: string; numItems: nu
                         }}
                     />
                 ))}
-                <div className={styles.box} style={{ width: '6%', right: '20%', top: '50%' }} />
-                <div className={styles.box} style={{ width: '6%', left: '20%', top: '50%' }} />
-                <div className={styles.box} style={{ width: '6%', bottom: '-7vw', right: '12vw' }} />
-                <div className={styles.box} style={{ width: '8%', bottom: '-8vw', right: '15vw' }} />
+                <div className={`${styles.box} ${styles.blink}`} style={{ width: '6%', right: '20%', top: '50%' }} />
+                <div className={`${styles.box} ${styles.blink}`} style={{ width: '6%', left: '20%', top: '50%' }} />
+                <div className={`${styles.box} ${styles.blink}`} style={{ width: '6%', bottom: '-7vw', right: '12vw' }} />
+                <div className={`${styles.box} ${styles.blink}`} style={{ width: '8%', bottom: '-8vw', right: '15vw' }} />
             </div>
             {items.map((item, index) => (
                 <div
@@ -55,7 +56,9 @@ const CircleLayout = ({ className, numItems }: { className: string; numItems: nu
                         transform: `translate(${item.x}vw, ${item.y}vw)`,
                     }}
                 >
-                    <strong>{Math.floor(Math.random() * 10) + 90}</strong>
+                    <strong>
+                        <NumberFlow value={Math.floor(Math.random() * 10) + 90} format={{ notation: "compact", maximumFractionDigits: 0 }} plugins={[continuous]} />
+                    </strong>
                     <div className={styles.name}>А5.5.3.{item.id}</div>
                 </div>
             ))}

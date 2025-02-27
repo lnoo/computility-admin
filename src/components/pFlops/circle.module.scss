@@ -47,6 +47,15 @@
         &:nth-child(7) {
             animation: box-move-top 4s ease 2s infinite both;
         }
+
+    }
+
+    .blink {
+        animation: blink 4s infinite alternate;
+
+        &:last-child {
+            animation: blink 3s infinite alternate;
+        }
     }
 }
 
@@ -114,5 +123,22 @@
 
     100% {
         margin-top: 0;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    50% {
+        opacity: 0.3;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
     }
 }
